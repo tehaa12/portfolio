@@ -1,0 +1,276 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Color Scheme */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --background-color: #fff;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hamburger Menu Icon (Mobile) */
+nav .menu-icon {
+    display: none;
+}
+
+/* Sections */
+section {
+    padding: 4rem 2rem;
+    margin-top: 80px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.service {
+    flex: 1 1 calc(33% - 2rem);
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+blockquote {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Form Styling */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact input, #contact textarea {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+}
+
+#contact input:focus, #contact textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background-color: #fff;
+}
+
+#contact button {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+/* Scroll-to-Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+}
+
+/* Responsive Header for Mobile Screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        height: 60px; /* Reduced header height */
+        position: relative; /* Needed for positioning the menu */
+        overflow: hidden; /* Ensures content is hidden outside nav */
+    }
+
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hide the menu off-screen initially from the left */
+        width: 60%; /* Increased width for better usability */
+        height: 100%; /* Full height */
+        background-color: var(--primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.5s ease; /* Sliding animation */
+        border-radius: 0 20px 20px 0; /* Rounded right corners */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        padding: 0; /* Remove any padding */
+        margin: 0; /* Remove any margin */
+    }
+
+    nav ul li {
+        margin: 1rem 0; /* Margin between items */
+        text-align: center;
+        width: 100%;
+        position: relative; /* Needed for pseudo-element positioning */
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem 0;/* Top and bottom padding for space */
+        font-size: 1.5rem;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 100%; /* Ensures the link takes full width */
+        margin: 0; /* No margin to eliminate space */
+        box-sizing: border-box; /* Ensure padding is included in width */
+        position: relative; /* Needed for the pseudo-element */
+        overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        left: 0; /* No space on the left */
+        bottom: 0;
+        height: 2px; /* Height of the border */
+        width: 100%; /* Full width */
+        background-color: transparent; /* Initial transparent color */
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
+
+    nav ul li a:hover::after {
+        background-color: white; /* Change border color on hover */
+    }
+
+    nav ul li a:hover {
+        background-color:yellow;
+        color: red;
+    }
+nav ul li a{
+    border-bottom: 1px white solid;
+}
+    /* Menu Icon for Mobile */
+    nav .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        color: white;
+        margin-left: auto;
+    }
+
+    /* When the menu is active, slide in from the left */
+    nav.active ul {
+        left: 0; /* Slide in from the left */
+    }
+
+    /* Close icon */
+    .close-icon {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav.active .close-icon {
+        display: block;
+    }
+}
