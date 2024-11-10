@@ -76,22 +76,33 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm"> <!-- Add id here -->
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+     <div id="successMessage" class="hidden">
+    <span class="checkmark">&#10003;</span> Message Sent Successfully!
+</div>
+  <div id="spinner" class="hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+        <circle cx="25" cy="25" r="20" stroke="red" stroke-width="5" fill="none" stroke-dasharray="31.4159 31.4159">
+            <animate attributeName="stroke-dashoffset" from="31.4159" to="0" dur="1s" repeatCount="indefinite" />
+        </circle>
+    </svg>
+</div>
+
+</section>
+
 
     <!-- Social Media Links -->
     <footer>
         <p>Connect with me on:</p>
-        <a href="https://t.me/yourtelegram" target="_blank">Telegram</a> |
-        <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+        <a href="https://t.me/Teha65" target="_blank">Telegram</a> |
+        <a href="https://github.com/tehaa12" target="_blank">GitHub</a>
     </footer>
 
     <!-- Scroll to Top Button -->

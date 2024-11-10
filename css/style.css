@@ -136,6 +136,7 @@ blockquote {
     transition: background-color 0.3s ease;
 }
 
+
 #contact button:hover {
     background-color: var(--secondary-color);
 }
@@ -239,8 +240,8 @@ footer a:hover {
     }
 
     nav ul li a:hover {
-        background-color:yellow;
-        color: red;
+        /* background-color:yellow; */
+        color: cyan;
     }
 nav ul li a{
     border-bottom: 1px white solid;
@@ -273,4 +274,65 @@ nav ul li a{
     nav.active .close-icon {
         display: block;
     }
+}
+
+#successMessage {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+}
+
+#successMessage.show {
+    display: block;
+    opacity: 1;
+}
+
+
+#successMessage .checkmark {
+    font-size: 30px;
+    color: #fff;
+    margin-right: 10px;
+    animation: checkmark 0.1s ease-in-out;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hide spinner by default */
+#spinner {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}
+
+#spinner.show {
+    display: block;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
