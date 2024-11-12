@@ -151,13 +151,16 @@ document
 
       try {
         // Send form data to backend API
-        const response = await fetch("http://localhost:5000/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          "https://portfolio-backend-w6b1.onrender.com",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
 
         // Hide spinner after submission
         spinner.classList.remove("show"); // Hide spinner
